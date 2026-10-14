@@ -161,7 +161,3 @@ display(Markdown('\\n'.join(f'- **{k.title()}:** {v}' for k,v in decision.items(
 ], 'Choose one specialist capability and explain when it belongs outside an emergency briefing. Describe the authorization and provenance checks needed before using it.')
 
 print('Generated 10 notebooks in', OUT)
-
-
-
-\n

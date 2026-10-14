@@ -33,7 +33,3 @@ The notebooks use Python, NumPy, Matplotlib, and IPython display in a Pyodide br
 ## Attribution and further reading
 
 See the repository [README](https://github.com/jltobias/JupyterLite-Osiris#sources-attribution-and-licensing) for software and data-provider attribution, licensing requirements, and terms. Original illustrations in this book are part of this repository. Start at the [OSIRIS source and license](https://github.com/simplifaisoul/osiris), [USGS](https://earthquake.usgs.gov/fdsnws/event/1/), [NASA EONET](https://eonet.gsfc.nasa.gov/docs/v3), [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/), [OpenSky](https://opensky-network.org/), [NOAA NHC](https://www.nhc.noaa.gov/), and [GDACS](https://www.gdacs.org/).
-
-
-
-\n
