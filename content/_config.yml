@@ -1,0 +1,20 @@
+title: OSIRIS VEOC Field Guide
+author: JupyterLite-Osiris contributors
+copyright: "2026"
+logo: ../assets/veoc-splash.svg
+execute:
+  execute_notebooks: off
+parse:
+  myst_enable_extensions:
+    - colon_fence
+html:
+  use_repository_button: true
+  use_issues_button: true
+repository:
+  url: https://github.com/jltobias/JupyterLite-Osiris
+  branch: main
+  path_to_book: content
+sphinx:
+  config:
+    html_extra_path:
+      - ../assets
