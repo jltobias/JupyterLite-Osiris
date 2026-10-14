@@ -2,9 +2,9 @@
 
 ![Original illustration of the OSIRIS VEOC mission board, globe, and signal-to-brief workflow](assets/veoc-splash.svg)
 
-**Explore public signals. Verify evidence. Build a common operating picture. Brief with uncertainty.** Ten executable JupyterLite notebooks, a Jupyter Book, and interactive 2D/3D exercise views introduce [OSIRIS](https://github.com/simplifaisoul/osiris) as a possible component of a Virtual Emergency Operations Center (VEOC).
+**Explore public signals. Verify evidence. Build a common operating picture. Brief with uncertainty.** Eleven executable JupyterLite notebooks, a Jupyter Book, a full-screen mission dashboard, and interactive 2D/3D exercise views introduce [OSIRIS](https://github.com/simplifaisoul/osiris) as a possible component of a Virtual Emergency Operations Center (VEOC).
 
-**[JupyterLite Lab](https://jltobias.github.io/JupyterLite-Osiris/lab/index.html) · [Jupyter Book](https://jltobias.github.io/JupyterLite-Osiris/book/) · [2D operations map](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-2d.html) · [3D scene](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-3d.html) · [OSIRIS live map and cockpit](https://osirisai.live/)**
+**[VEOC mission dashboard](https://jltobias.github.io/JupyterLite-Osiris/scenes/veoc-dashboard.html) · [JupyterLite Lab](https://jltobias.github.io/JupyterLite-Osiris/lab/lab/index.html) · [Jupyter Book](https://jltobias.github.io/JupyterLite-Osiris/book/) · [2D operations map](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-2d.html) · [3D scene](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-3d.html) · [OSIRIS live map and cockpit](https://osirisai.live/)**
 
 > The GitHub Pages links above are intended deployment URLs and become live after the repository's Pages workflow succeeds and GitHub Pages is enabled with **GitHub Actions** as its source. The separate [OSIRIS live console](https://osirisai.live/) is operated upstream. All sectors, events, facilities, routes, and measurements in this field lab are **fictional exercise data**. This project is an independent educational companion, not an official OSIRIS product or a production EOC.
 
@@ -12,13 +12,15 @@
 
 | Experience | What it does |
 |---|---|
-| [Start notebook 00](https://jltobias.github.io/JupyterLite-Osiris/lab/index.html?path=00_start_here.ipynb) | Set up the observe → verify → prioritize → brief workflow. |
+| [Start notebook 00](https://jltobias.github.io/JupyterLite-Osiris/lab/lab/index.html?path=00_start_here.ipynb) | Set up the observe → verify → prioritize → brief workflow. |
+| [Notebook 10 · Mission control](https://jltobias.github.io/JupyterLite-Osiris/lab/lab/index.html?path=10_veoc_mission_control.ipynb) | Explore the full visual VEOC dashboard and reproduce its analysis. |
+| [Full-screen VEOC dashboard](https://jltobias.github.io/JupyterLite-Osiris/scenes/veoc-dashboard.html) | Scrub time, switch overlays, inspect evidence, compare charts, and export GeoJSON and a briefing. |
 | [Jupyter Book](https://jltobias.github.io/JupyterLite-Osiris/book/) | Read the guided mission, methods, caveats, and source desk. |
 | [2D operations map](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-2d.html) | Compare fictional calls, flood depths, and reporting; inspect sectors and export GeoJSON. |
 | [3D scene](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-3d.html) | Rotate a thematic globe and inspect columns that encode fictional assistance calls. |
 | [OSIRIS live console](https://osirisai.live/) | Explore the upstream live application, layers, cockpit, cameras, and broadcasts. |
 | [NOAA satellite scenes](https://www.star.nesdis.noaa.gov/GOES/) · [NASA Worldview](https://worldview.earthdata.nasa.gov/) | Open external imagery in its provider context, including product dates and attribution. |
-| [Notebook 09: full cockpit](https://jltobias.github.io/JupyterLite-Osiris/lab/index.html?path=09_cockpit_and_beyond.ipynb) | Review OI, RECON, cyber, sanctions, broadcasts, and other functions beyond the VEOC core. |
+| [Notebook 09: full cockpit](https://jltobias.github.io/JupyterLite-Osiris/lab/lab/index.html?path=09_cockpit_and_beyond.ipynb) | Review OI, RECON, cyber, sanctions, broadcasts, and other functions beyond the VEOC core. |
 
 ### Notebook missions
 
@@ -34,6 +36,7 @@
 | [07 · Health access](content/07_health_and_access.ipynb) | Compare counts, rates, beds, and reporting. |
 | [08 · Sitrep](content/08_priorities_and_sitrep.ipynb) | Review weights and produce a dated situation report. |
 | [09 · Full cockpit](content/09_cockpit_and_beyond.ipynb) | Tour advanced OSIRIS capabilities and scope boundaries. |
+| [10 · Mission control](content/10_veoc_mission_control.ipynb) | Operate the VEOC showcase and reproduce its maps, trends, and priorities. |
 
 Open a notebook in JupyterLite, select **Python (Pyodide)**, then **Run → Run All Cells**. Each notebook is independent and uses bundled exercise data. The browser downloads the runtime and Python packages on first use. Browser files may be cached; export your work before clearing site data. Static Pages cannot proxy OSIRIS API routes or store private keys.
 
@@ -61,7 +64,7 @@ The experience draws design ideas from the author's [WorldView field lab](https:
 
 ## Build and deploy
 
-The [Pages workflow](.github/workflows/pages.yml) regenerates notebooks, builds JupyterLite at `/lab/`, builds Jupyter Book at `/book/`, and publishes the two HTML scenes at `/scenes/`. Set **Settings → Pages → Source → GitHub Actions** in the destination repository. A successful run produces the links above.
+The [Pages workflow](.github/workflows/pages.yml) regenerates notebooks, builds JupyterLite at `/lab/`, builds Jupyter Book at `/book/`, and publishes the mission dashboard and two map scenes at `/scenes/`. Set **Settings → Pages → Source → GitHub Actions** in the destination repository. A successful run produces the links above.
 
 For a local build with Python 3.11 or 3.12:
 

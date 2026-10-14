@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071621">
+  <title>OSIRIS VEOC · Mission Control Exercise</title>
+  <link rel="stylesheet" href="veoc-dashboard.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to dashboard</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">⬡</span><span><strong>OSIRIS <em>VEOC</em></strong><small>MISSION CONTROL / COASTAL STORM EXERCISE</small></span></div>
+    <div class="top-actions"><span class="simulation">● FICTIONAL EXERCISE DATA</span><span id="clock" class="clock"></span><a class="launch" href="https://osirisai.live/" target="_blank" rel="noopener">Open live OSIRIS ↗</a></div>
+  </header>
+  <main id="main">
+    <section class="command-strip" aria-label="Incident controls">
+      <div><span class="eyebrow">INCIDENT SIMULATION</span><h1>Coastal storm · common operating picture</h1><p>Explore how OSIRIS-style public signals become an evidence-led VEOC briefing.</p></div>
+      <div class="time-control"><label for="hour">Exercise time <strong id="hour-label">T+4 h</strong></label><input id="hour" type="range" min="0" max="12" value="4"><div class="tick-labels"><span>T+0</span><span>T+6</span><span>T+12</span></div></div>
+    </section>
+    <section class="kpis" aria-label="Exercise metrics">
+      <article class="kpi"><span>Assistance calls</span><strong id="kpi-calls">—</strong><small>synthetic reports across six sectors</small><div id="calls-spark" class="spark"></div></article>
+      <article class="kpi"><span>High water sectors</span><strong id="kpi-flood">—</strong><small>modeled depth ≥ 1.0 m</small><div class="kpi-icon">◈</div></article>
+      <article class="kpi"><span>Open exercise beds</span><strong id="kpi-beds">—</strong><small>invented capacity; verify before use</small><div class="kpi-icon">✚</div></article>
+      <article class="kpi"><span>Reporting coverage</span><strong id="kpi-reporting">—</strong><small>population-weighted estimate</small><div class="kpi-icon">◉</div></article>
+      <article class="kpi amber"><span>Verification queue</span><strong id="kpi-queue">—</strong><small>unconfirmed exercise claims</small><div class="kpi-icon">⌁</div></article>
+    </section>
+    <section class="operations-grid">
+      <aside class="layers panel" aria-label="Map layers">
+        <div class="panel-heading"><div><span class="eyebrow">01 / OBSERVE</span><h2>Layer control</h2></div><span class="live-dot" title="Exercise playback, not live data"></span></div>
+        <p class="muted">Select the signals relevant to the operational question.</p>
+        <fieldset><legend>Exercise overlays</legend>
+          <label><input type="checkbox" data-layer="calls" checked><span class="swatch teal"></span> Assistance demand <b id="count-calls">6</b></label>
+          <label><input type="checkbox" data-layer="flood" checked><span class="swatch orange"></span> Flood depth <b id="count-flood">6</b></label>
+          <label><input type="checkbox" data-layer="clinics" checked><span class="swatch green"></span> Health access <b>6</b></label>
+          <label><input type="checkbox" data-layer="cameras" checked><span class="swatch blue"></span> Public cameras <b>3</b></label>
+          <label><input type="checkbox" data-layer="aircraft" checked><span class="swatch purple"></span> Aviation context <b>2</b></label>
+          <label><input type="checkbox" data-layer="maritime" checked><span class="swatch cyan"></span> Maritime context <b>2</b></label>
+          <label><input type="checkbox" data-layer="hazards" checked><span class="swatch red"></span> Hazard leads <b>3</b></label>
+        </fieldset>
+        <div class="divider"></div>
+        <label class="stacked" for="metric">Map metric</label><select id="metric"><option value="calls">Assistance calls</option><option value="flood">Modeled water depth</option><option value="reporting">Reporting coverage</option><option value="rate">Calls per 10,000</option></select>
+        <div class="divider"></div><div class="view-links"><a href="operations-2d.html">Full 2D map ↗</a><a href="operations-3d.html">Full 3D globe ↗</a></div>
+        <p class="source-note">The base illustration and every marker are synthetic. Switch to the live OSIRIS app for upstream feeds and verify them at their providers.</p>
+      </aside>
+      <section class="map-panel panel" aria-label="Exercise map">
+        <div class="panel-heading map-heading"><div><span class="eyebrow">02 / LOCATE</span><h2>Operational geography</h2></div><div class="segmented" role="group" aria-label="Map view"><button id="view-2d" class="active" aria-pressed="true">2D map</button><button id="view-3d" aria-pressed="false">3D globe</button></div></div>
+        <div id="map-2d" class="map-viewport"><svg id="map-svg" viewBox="0 0 1000 590" role="img" aria-label="Fictional coastal sectors with selectable exercise overlays"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#65aec0" stroke-opacity=".12"/></pattern><radialGradient id="water"><stop stop-color="#174a61"/><stop offset="1" stop-color="#0b2639"/></radialGradient></defs><rect width="1000" height="590" fill="url(#water)"/><rect width="1000" height="590" fill="url(#grid)"/><path d="M0 0H1000V150Q850 180 770 255T640 405Q560 510 300 590H0Z" fill="#275550" opacity=".56"/><path d="M320-30Q365 150 490 210T630 580" fill="none" stroke="#6dbcc6" stroke-opacity=".25" stroke-width="53"/><path d="M150 80L685 440M130 250L790 180M260 530L780 250" stroke="#89c6c7" stroke-opacity=".18" stroke-width="9" stroke-dasharray="14 7"/><g id="flood-zones"></g><g id="route-lines"></g><g id="sector-points"></g><g id="signal-points"></g><text x="37" y="48" fill="#9bd5d7" font-size="15" letter-spacing="2">SCHEMATIC COASTAL DISTRICT / NOT A NAVIGATIONAL MAP</text><text x="888" y="564" fill="#9bd5d7" font-size="14">N ↑</text></svg><div class="map-legend"><span><i class="swatch teal"></i> Demand</span><span><i class="swatch orange"></i> Modeled depth</span><span><i class="swatch green"></i> Health</span><span><i class="swatch purple"></i> Other signals</span></div></div>
+        <iframe id="map-3d" title="Rotatable fictional 3D exercise globe" src="operations-3d.html" loading="lazy"></iframe>
+        <div class="map-bottom"><span id="map-caption">Click a sector or signal to inspect the evidence card.</span><button id="export-geojson">Export GeoJSON ↓</button></div>
+      </section>
+      <aside class="evidence panel" aria-label="Evidence desk"><div class="panel-heading"><div><span class="eyebrow">03 / VERIFY</span><h2>Evidence desk</h2></div><span class="count-badge">5 leads</span></div>
+        <div id="selection" class="selection" aria-live="polite"><span class="eyebrow">SELECTED VIEW</span><h3>Canal sector</h3><p>Click a map marker to inspect an exercise observation.</p></div>
+        <h3 class="subhead">Incoming exercise leads</h3><div id="feed" class="feed"></div>
+        <p class="source-note">Synthetic leads imitate OSIRIS layer types. They are not fetched from OSIRIS or any provider.</p>
+      </aside>
+    </section>
+    <section class="analysis-grid">
+      <article class="panel chart-panel"><div class="panel-heading"><div><span class="eyebrow">04 / TREND</span><h2>Demand and reporting</h2></div><span class="pill">T+0 → T+12</span></div><div id="trend-chart" class="chart" role="img" aria-label="Synthetic assistance calls and reporting coverage over exercise time"></div><p class="chart-caption">More calls can reflect more reporting, more need, or both. Review coverage beside volume.</p></article>
+      <article class="panel chart-panel"><div class="panel-heading"><div><span class="eyebrow">05 / COMPARE</span><h2>Sector pressure</h2></div><span class="pill">Calls per 10k + access</span></div><div id="sector-chart" class="chart" role="img" aria-label="Fictional sector call rates and road access"></div><p class="chart-caption">Rate denominators and road times are exercise assumptions, not dispatch guidance.</p></article>
+      <article class="panel chart-panel"><div class="panel-heading"><div><span class="eyebrow">06 / PRIORITIZE</span><h2>Transparent priorities</h2></div><span class="pill">Weighted exercise score</span></div><div id="priority-chart" class="chart" role="img" aria-label="Illustrative priority ranking for six sectors"></div><p class="chart-caption">Calls 35% · flood 30% · access 20% · reporting gap 15%. Human review required.</p></article>
+    </section>
+    <section class="capability-section panel"><div class="panel-heading"><div><span class="eyebrow">07 / ORIENT</span><h2>OSIRIS capability wall</h2></div><a href="https://github.com/simplifaisoul/osiris#key-capabilities" target="_blank" rel="noopener">Upstream capability reference ↗</a></div><p class="muted">A conceptual tour of domains documented by OSIRIS. The cards below are links or simulated previews; they do not claim live API connectivity in this static exercise.</p><div id="capabilities" class="capabilities"></div></section>
+    <section class="handover-grid"><article class="panel"><div class="panel-heading"><div><span class="eyebrow">08 / BRIEF</span><h2>Situation report preview</h2></div><button id="export-sitrep">Download briefing ↓</button></div><div id="sitrep" class="sitrep"></div></article><article class="panel provenance"><div class="panel-heading"><div><span class="eyebrow">09 / SOURCE DESK</span><h2>Provenance and limits</h2></div></div><ul><li><b>Exercise dataset:</b> invented for this repository; MIT licensed.</li><li><b>Live application:</b> <a href="https://osirisai.live/">OSIRIS</a>, operated independently of this site.</li><li><b>Hazards:</b> <a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS</a>, <a href="https://eonet.gsfc.nasa.gov/docs/v3">NASA EONET</a>, <a href="https://firms.modaps.eosdis.nasa.gov/">FIRMS</a>, <a href="https://www.nhc.noaa.gov/">NOAA NHC</a>.</li><li><b>Movement:</b> <a href="https://opensky-network.org/">OpenSky</a> aviation; maritime context in OSIRIS includes static references.</li><li><b>Imagery:</b> <a href="https://www.star.nesdis.noaa.gov/GOES/">NOAA GOES scenes</a>; check product times and rights.</li><li><b>Review rule:</b> separate observed, modeled, and unknown information.</li></ul><p class="source-note">See the <a href="https://github.com/jltobias/JupyterLite-Osiris#sources-attribution-and-licensing">README attribution and licensing table</a> before reusing external feeds or media.</p></article></section>
+  </main>
+  <footer><span>OSIRIS VEOC FIELD LAB · ORIGINAL EXERCISE DASHBOARD · NOT FOR OPERATIONS</span><span><a href="../book/">Jupyter Book</a> · <a href="../lab/lab/index.html?path=10_veoc_mission_control.ipynb">Notebook 10</a> · <a href="https://github.com/jltobias/JupyterLite-Osiris">Source</a></span></footer>
+  <script src="veoc-dashboard.js" defer></script>
+</body>
+</html>

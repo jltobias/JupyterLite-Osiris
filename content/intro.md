@@ -1,10 +1,10 @@
-﻿# OSIRIS Â· Virtual Emergency Operations Center
+# OSIRIS Â· Virtual Emergency Operations Center
 
 ![Original illustrated VEOC mission board](assets/veoc-splash.svg)
 
 **A field guide and executable browser lab for turning public signals into accountable emergency briefings.** This is an independent educational companion to [OSIRIS](https://github.com/simplifaisoul/osiris), created by simplifaisoul. It is not an official OSIRIS distribution or an operational emergency response platform.
 
-[Launch JupyterLite](https://jltobias.github.io/JupyterLite-Osiris/lab/index.html) Â· [2D map](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-2d.html) Â· [3D scene](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-3d.html) Â· [OSIRIS live console](https://osirisai.live/)
+[Launch JupyterLite](https://jltobias.github.io/JupyterLite-Osiris/lab/lab/index.html) · [VEOC mission dashboard](https://jltobias.github.io/JupyterLite-Osiris/scenes/veoc-dashboard.html) Â· [2D map](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-2d.html) Â· [3D scene](https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-3d.html) Â· [OSIRIS live console](https://osirisai.live/)
 
 ## Choose a route
 
@@ -14,6 +14,7 @@
 | Geospatial operations | 02 â†’ 03 â†’ 05 | 2D/3D communication and logistics assumptions |
 | Evidence and decision | 04 â†’ 06 â†’ 07 â†’ 08 | Freshness, corroboration, population context, sitrep |
 | Full cockpit | 09 | Explore OSIRIS functions beyond VEOC scope |
+| Mission control demo | 10 | Operate the full synthetic dashboard and reproduce its charts |
 
 ## Exercise boundary
 
